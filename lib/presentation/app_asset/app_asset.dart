@@ -10,5 +10,6 @@ class AppAsset {
   static const googleImage = 'assets/images/Google__G__Logo 1.png';
   static const facebookImage = 'assets/images/f.png';
   static const acerLogo = 'assets/images/acer-logo-0 1.png';
+  static const splashBackground = 'assets/images/backgrundsplash.png';
 
 }

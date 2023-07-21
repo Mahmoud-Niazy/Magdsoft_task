@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:magdsoft_flutter_structure/app_words/app_words.dart';
 import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/user/home/home_screen.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/app_text_style.dart';
@@ -35,8 +36,8 @@ class HelpScreenBody extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    'Help',
-                    style: AppTextStyle.label30.copyWith(
+                    AppWords.help,
+                    style: AppTextStyle.label17.copyWith(
                       color: AppColor.white,
                     ),
                   ),
@@ -57,7 +58,7 @@ class HelpScreenBody extends StatelessWidget {
                     ),
                   ),
                   BuildButton(
-                    label: 'Continue',
+                    label: AppWords.continue_,
                     onPressed: () {
                       navigateAndFinish(
                         context: context,
@@ -67,6 +68,7 @@ class HelpScreenBody extends StatelessWidget {
                     },
                     width: MediaQuery.of(context).size.width * .7,
                     height: 40.h,
+                    border: 50,
                   ),
                 ],
               ),

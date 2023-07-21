@@ -10,6 +10,7 @@ import 'package:magdsoft_flutter_structure/presentation/screens/user/home/widget
 import 'package:magdsoft_flutter_structure/presentation/styles/app_text_style.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/circular_progress_indicator.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/custom_text_form_field.dart';
+import '../../../../../app_words/app_words.dart';
 import '../../../../styles/colors.dart';
 
 class HomeScreenBody extends StatelessWidget {
@@ -20,9 +21,8 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: AppColor.mixWhiteAndBlueColorsForScreens
-      ),
+      decoration:
+          BoxDecoration(gradient: AppColor.mixWhiteAndBlueColorsForScreens),
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -41,7 +41,7 @@ class HomeScreenBody extends StatelessWidget {
                       Expanded(
                         flex: 6,
                         child: BuildTextFormField(
-                          label: 'Search',
+                          label: AppWords.search,
                           controller: searchController,
                           radius: 10,
                           suffixIcon: Icons.search,
@@ -80,38 +80,52 @@ class HomeScreenBody extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    'Recomended for you',
+                    AppWords.recomendedForYou,
                     style: AppTextStyle.label20.copyWith(color: Colors.black),
                   ),
                 ],
               ),
             ),
-            BlocConsumer<GlobalCubit,GlobalState>(
-              listener: (context,state){},
-              builder: (context,state){
+            BlocConsumer<GlobalCubit, GlobalState>(
+              listener: (context, state) {},
+              builder: (context, state) {
+                final screenWidth = MediaQuery.of(context).size.width;
                 var cubit = GlobalCubit.get(context);
-                if(state is GetAllProductsLoadingState){
+                if (state is GetAllProductsLoadingState) {
                   return const CustomCircularProgressIndicator();
-                }
-                else{
+                } else {
                   return GridView.builder(
                     padding: EdgeInsets.symmetric(
                       horizontal: 20.w,
                     ),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
                       crossAxisSpacing: 30,
-                      childAspectRatio: 1 / 1.8,
+                      childAspectRatio: (screenWidth - 30 - 15) / (2 * 290),
+                      // 1 / 1.8,
                     ),
-                    itemBuilder: (context, index) => GridViewItem(product: cubit.allProducts[index]),
+                    itemBuilder: (context, index) {
+                      if (index % 2 == 0) {
+                        return OverflowBox(
+                          maxHeight: 315,
+                          child: GridViewItem(
+                            product: cubit.allProducts[index],
+                            margin: 40,
+                          ),
+                        );
+                      } else {
+                        return GridViewItem(
+                          product: cubit.allProducts[index],
+                        );
+                      }
+                    },
                     itemCount: cubit.allProducts.length,
                   );
                 }
               },
-
             ),
           ],
         ),

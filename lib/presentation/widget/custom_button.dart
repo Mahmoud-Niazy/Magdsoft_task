@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 
 class BuildButton extends StatelessWidget {
@@ -8,7 +9,7 @@ class BuildButton extends StatelessWidget {
   final String label;
   final double? border ;
 
-   const BuildButton({Key? key,
+    const BuildButton({Key? key,
     required this.onPressed,
     this.height = 50,
     this.width = double.infinity,
@@ -19,12 +20,12 @@ class BuildButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      width: width,
+      height: height.h,
+      width: width.w,
 
       decoration: BoxDecoration(
         gradient: AppColor.mixWhiteAndBlueColorsForButtons,
-        borderRadius: BorderRadius.circular(border!),
+        borderRadius: BorderRadius.circular(border!.r),
       ),
       child: MaterialButton(
         onPressed: onPressed,

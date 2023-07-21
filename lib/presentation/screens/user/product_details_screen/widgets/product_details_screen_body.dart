@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:magdsoft_flutter_structure/app_words/app_words.dart';
 import 'package:magdsoft_flutter_structure/data/models/product_data_model.dart';
 import 'package:magdsoft_flutter_structure/presentation/screens/user/home/widgets/CustomImageForProduct.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/app_text_style.dart';
@@ -165,7 +166,7 @@ class ProductDetailsScreenBody extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Price',
+                          AppWords.price,
                           style: AppTextStyle.label15,
                         ),
                         SizedBox(
@@ -182,7 +183,7 @@ class ProductDetailsScreenBody extends StatelessWidget {
                   Expanded(
                     child: BuildButton(
                       onPressed: () {},
-                      label: 'Add To Cart',
+                      label: AppWords.addToCart,
                       border: 12,
                     ),
                   ),
@@ -205,17 +206,17 @@ class ProductDetailsScreenBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BuildTextButton(
-                    label: 'OverView',
+                    label: AppWords.overView,
                     onPressed: () {},
                     color: Colors.black,
                   ),
                   BuildTextButton(
-                    label: 'Specification',
+                    label: AppWords.specification,
                     onPressed: () {},
                     color: Colors.grey,
                   ),
                   BuildTextButton(
-                    label: 'Review',
+                    label: AppWords.review,
                     onPressed: () {},
                     color: Colors.grey,
                   ),

@@ -6,7 +6,6 @@ class AppTextStyle{
 
   //Welcome in Login Screen
   //Verify Phone in Otp Screen
-  //Help in Help Screen
   // product name
   static TextStyle label30 = TextStyle(
     fontSize: 30.sp,
@@ -16,8 +15,15 @@ class AppTextStyle{
   // title in ExpansionTile
   // Recomended for you in Home Screen
   //Acer Official Store in Product Details Screen
+  // Text Buttons
   static TextStyle label20 = TextStyle(
     fontSize: 20.sp,
+    color: Colors.blue,
+  );
+
+  //Help in Help Screen
+  static TextStyle label17 = TextStyle(
+    fontSize: 17.sp,
     color: Colors.blue,
   );
 
@@ -39,7 +45,6 @@ class AppTextStyle{
     color: Colors.black,
   );
 
-  // Text Buttons
   // product type
   //  Price EGP in Product Details Screen
   static TextStyle label18 = TextStyle(
@@ -54,7 +59,7 @@ class AppTextStyle{
   );
 
   static TextStyle textFormFieldTextStle = TextStyle(
-    fontSize: 15.sp,
+    fontSize: 12.sp,
     color: Colors.grey,
   );
 }

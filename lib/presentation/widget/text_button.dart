@@ -21,7 +21,7 @@ class BuildTextButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         label,
-        style: AppTextStyle.label18.copyWith(
+        style: AppTextStyle.label20.copyWith(
           color: color ?? AppColor.mainColor,
         ),
       ),

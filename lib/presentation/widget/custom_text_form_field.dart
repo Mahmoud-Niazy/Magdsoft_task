@@ -25,7 +25,7 @@ class BuildTextFormField extends StatelessWidget {
       elevation: 10,
       borderRadius: BorderRadius.circular(radius),
       child: Container(
-        height: 45.h,
+        height: 48.h,
         padding: EdgeInsets.only(
           left: 10.w,
         ),

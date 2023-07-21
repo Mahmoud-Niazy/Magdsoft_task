@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:magdsoft_flutter_structure/app_words/app_words.dart';
 import 'package:magdsoft_flutter_structure/presentation/styles/shadow.dart';
 import '../../../../../business_logic/global_cubit/global_cubit.dart';
 import '../../../../../functions/navigation.dart';
@@ -26,11 +27,12 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Positioned(
       top: MediaQuery.of(context).size.height * .2,
-      bottom: MediaQuery.of(context).size.height * .38,
+      bottom: MediaQuery.of(context).size.height * .36,
       left: MediaQuery.of(context).size.width * .1,
       right: MediaQuery.of(context).size.width * .1,
       child: SizedBox(
-        width: double.infinity,
+        width: 372.w,
+        height: 345.h,
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: 20.w,
@@ -50,8 +52,10 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
               child: Column(
                 children: [
                   Text(
-                    'Welcome',
-                    style: AppTextStyle.label30,
+                    AppWords.welcome,
+                    style: AppTextStyle.label30.copyWith(
+                      height: 0,
+                    ),
                   ),
                   SizedBox(
                     height: 10.h,
@@ -68,11 +72,11 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
                   ),
                   BuildTextFormField(
                     radius: 15,
-                    label: 'Enter your full name',
+                    label: AppWords.enterName,
                     controller: nameController,
                     validation: (value) {
                       if (value!.isEmpty) {
-                        return 'You must enter you name';
+                        return AppWords.youMustEnterName;
                       }
                       return null;
                     },
@@ -83,14 +87,14 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
                   BuildTextFormField(
                     type: TextInputType.phone,
                     radius: 15,
-                    label: 'Enter your Phone Number',
+                    label: AppWords.enterPhone,
                     controller: phoneController,
                     validation: (value) {
                       if (value!.isEmpty) {
-                        return 'You must enter you phone';
+                        return AppWords.youMustEnterPhone;
                       }
                       if (value.length != 11) {
-                        return 'Phone number must be 11 numbers';
+                        return AppWords.phoneNumbermustbe11;
                       }
                       return null;
                     },
@@ -122,6 +126,8 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
                         return const CustomCircularProgressIndicator();
                       } else {
                         return BuildButton(
+                          height: 48,
+                          border: 50,
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
                               GlobalCubit.get(context).userLogin(
@@ -132,7 +138,7 @@ class ContainerForLoginInLoginScreen extends StatelessWidget{
                               );
                             }
                           },
-                          label: 'Login',
+                          label: AppWords.login,
                         );
                       }
                     },

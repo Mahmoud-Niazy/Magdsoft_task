@@ -85,6 +85,7 @@ flutter:
     - assets/images/test.png
     - assets/images/f.png
     - assets/images/acer-logo-0 1.png
+    - assets/images/backgrundsplash.png
     - assets/i18n/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -3,6 +3,7 @@ import 'colors.dart';
 
 BoxShadow boxShadow = const BoxShadow(
   color: AppColor.lightBlack,
-  offset: Offset(0.0, 1.0),
-  blurRadius: 5.0,
+  offset: Offset(2,2),
+  blurRadius: 8.0,
+  spreadRadius: 2,
 );

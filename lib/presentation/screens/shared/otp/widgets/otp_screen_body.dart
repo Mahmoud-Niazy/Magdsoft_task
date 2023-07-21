@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:magdsoft_flutter_structure/app_words/app_words.dart';
 import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cubit.dart';
 import 'package:magdsoft_flutter_structure/data/data_providers/local/cache_helper.dart';
 import 'package:magdsoft_flutter_structure/functions/navigation.dart';
@@ -38,7 +39,7 @@ class OtpScreenBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Verify Phone',
+                  AppWords.verifyPhone,
                   style: AppTextStyle.label30.copyWith(
                     color: AppColor.white,
                   ),
@@ -50,7 +51,7 @@ class OtpScreenBody extends StatelessWidget {
                 SizedBox(
                   height: 60.h,
                 ),
-                BuildTextButton(label: 'Resend Code', onPressed: (){}),
+                BuildTextButton(label: AppWords.resendCode, onPressed: (){}),
                 SizedBox(
                   height: 100.h,
                 ),
@@ -73,6 +74,7 @@ class OtpScreenBody extends StatelessWidget {
                     }
                     else{
                       return BuildButton(
+                        height: 50,
                         onPressed: () {
                           if(formKey.currentState!.validate()){
                             GlobalCubit.get(context).checkCode(data: {
@@ -81,7 +83,7 @@ class OtpScreenBody extends StatelessWidget {
                             });
                           }
                         },
-                        label: 'Verify',
+                        label: AppWords.verify,
                       );
                     }
                   },
