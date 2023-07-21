@@ -104,13 +104,13 @@ class HomeScreenBody extends StatelessWidget {
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
                       crossAxisSpacing: 30,
-                      childAspectRatio: (screenWidth - 30 - 15) / (2 * 290),
+                      childAspectRatio: (screenWidth - 30 - 15) / (2 * 330),
                       // 1 / 1.8,
                     ),
                     itemBuilder: (context, index) {
                       if (index % 2 == 0) {
                         return OverflowBox(
-                          maxHeight: 315,
+                          maxHeight: 340,
                           child: GridViewItem(
                             product: cubit.allProducts[index],
                             margin: 40,
